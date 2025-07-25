@@ -81,7 +81,7 @@ BSD license, check license.txt for more information
 #endif
 #ifdef ESP32
   #define GPIO_REG_SET(val) GPIO.out_w1ts = val
-  #define GPIO_REG_CLEAR(val) GPIO.out_w1tc = val
+  #define GPIO_REG_CLEAR(val) GPIO.out_w1tc = (val)
 #endif
 #ifdef __AVR__
   #define GPIO_REG_SET(val) (val < 8) ? PORTD |= _BV(val) : PORTB |= _BV(val-8)
